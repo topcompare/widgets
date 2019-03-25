@@ -1,0 +1,157 @@
+.tool-tile {
+  background-color: #FFF;
+  border-radius: 5px;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica;
+  height: 370px;
+  margin: 15px;
+  padding: 10px;
+  width: 330px;
+}
+
+.tool-header {
+  overflow: auto;
+}
+
+.tool-header .title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.tool-content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.tool-icon {
+  background-color: #eee;
+  border-radius: 50%;
+  float: left;
+  height: 80px;
+  padding: 20px;
+  width: 80px;
+}
+
+.powered-by {
+  float: right;
+  font-size: 9px;
+  text-align: right;
+}
+
+.tool-icon img {
+  height: 100%;
+}
+
+.tool-CTA a {
+  background-color: #2c8bb1;
+  border-bottom: 4px solid #1c546b;
+  border-radius: 4px;
+  color: #FFF;
+  display: block;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 2.2;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.tool-CTA a:hover {
+  background-color: #1c546b;
+}
+
+.tc-main-content-left-container-holder {
+  display: table;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.tc-main-content-left-container div div {
+  font-weight: 700;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.tc-main-content-left-container div input {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  font-size: 14px;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.tc-main-content-left-container div .tc-drag-slidecontainer {
+  border: none;
+  margin-top: 15px;
+  padding: 0;
+  width: 100%;
+}
+
+.tc-main-content-left-container div .tc-drag-slider {
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+  background: #d7dcdf;
+  border-radius: 5px;
+  height: 10px;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  transition: opacity .2s;
+  width: 100%;
+}
+
+.tc-drag-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #76aa43;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
+
+.tc-drag-slider::-moz-range-thumb {
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
+
+.tc-input-col-4 {
+  display: block;
+  float: left;
+  padding: 0!important;
+  width: 25%;
+}
+
+.tc-input-col-6 {
+  display: block;
+  float: left;
+  padding: 0!important;
+  width: 50%;
+}
+
+.tc-input-col-12 {
+  float: left;
+  padding: 0!important;
+  width: 100%;
+}
+
+.tc-input-col-8 {
+  display: block;
+  float: left;
+  padding: 0 0 0 5px !important;
+  width: 75%;
+}
+
+*,::after,::before {
+  box-sizing: border-box!important;
+}
