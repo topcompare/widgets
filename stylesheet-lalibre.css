@@ -1040,10 +1040,10 @@ input[type="text"]:disabled {
 
 }
 
-/ * Specific code */
+/* Specific code */
 
 #tc_display_widget {
-  max-width: 1180px; /* to not take the full width */
+  max-width: 1180px; /* Override css on top of this page to not take the full width */
   margin: 0 auto; /* to center the widget */
 }
 
