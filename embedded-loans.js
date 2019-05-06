@@ -51,7 +51,7 @@
     duration_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-duration");
   }
 
-  var gtmTCWidget = document.getElementById("tc_display_widget").getAttribute("data-gtm");
+  gtmTCWidget = document.getElementById("tc_display_widget").getAttribute("data-gtm");
   if (!gtmTCWidget)
     gtmTCWidget = 'GTM-K9LSPW3';
 
