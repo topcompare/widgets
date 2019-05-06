@@ -42,12 +42,12 @@
   var duration_attr = 24;
   if (typeof qs.loanAmount !== "undefined") { 
     amount_attr = qs.loanAmount;
-  }else if (typeof document.getElementById("tc_display_widget").getAttribute("data-loan-amount") !== "undefined") {
+  } else if (typeof document.getElementById("tc_display_widget").getAttribute("data-loan-amount") !== "undefined") {
     amount_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-amount");
   }
   if (typeof qs.loanDuration !== "undefined") { 
     duration_attr = qs.loanDuration;
-  }else if (typeof document.getElementById("tc_display_widget").getAttribute("data-loan-duration") !== "undefined"){
+  } else if (typeof document.getElementById("tc_display_widget").getAttribute("data-loan-duration") !== "undefined"){
     duration_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-duration");
   }
 
@@ -58,6 +58,10 @@
   var css = document.createElement("link");
   css.rel = "stylesheet";
   css.href = domain + "/css/_widget_css_code.css";
+  if (typeof document.getElementById("tc_display_widget").getAttribute("data-stylesheet") !== "undefined") {
+    css_attr = document.getElementById("tc_display_widget").getAttribute("data-stylesheet");
+    css.href = "https://cdn.jsdelivr.net/gh/topcompare/widgets/stylesheet-"+css_attr+".css";
+  }
   window.onload = (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(css);
 
   var googleTagManager = document.createElement("script");
