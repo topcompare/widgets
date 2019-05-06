@@ -42,12 +42,12 @@
   var duration_attr = 24;
   if (typeof qs.loanAmount !== "undefined") { 
     amount_attr = qs.loanAmount;
-  } else if (typeof document.getElementById("tc_display_widget").getAttribute("data-loan-amount") !== "undefined") {
+  } else if (document.getElementById("tc_display_widget").getAttribute("data-loan-amount") !== null) {
     amount_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-amount");
   }
   if (typeof qs.loanDuration !== "undefined") { 
     duration_attr = qs.loanDuration;
-  } else if (typeof document.getElementById("tc_display_widget").getAttribute("data-loan-duration") !== "undefined"){
+  } else if (document.getElementById("tc_display_widget").getAttribute("data-loan-duration") !== null){
     duration_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-duration");
   }
 
@@ -58,8 +58,8 @@
   var css = document.createElement("link");
   css.rel = "stylesheet";
   css.href = domain + "/css/_widget_css_code.css";
-  if (typeof document.getElementById("tc_display_widget").getAttribute("data-stylesheet") !== "undefined") {
-    css_attr = document.getElementById("tc_display_widget").getAttribute("data-stylesheet");
+  if (document.getElementById("tc_display_widget").getAttribute("data-stylesheet") !== null) {
+    let css_attr = document.getElementById("tc_display_widget").getAttribute("data-stylesheet");
     css.href = "https://cdn.jsdelivr.net/gh/topcompare/widgets/stylesheet-"+css_attr+".css";
   }
   window.onload = (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(css);
@@ -71,7 +71,7 @@
 
   var EQCSS = document.createElement("script");
   EQCSS.type = "text/javascript";
-  EQCSS.src = domain + "/js/EQCSS.min.js"
+  EQCSS.src = domain + "/js/EQCSS.min.js";
   window.onload = (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(EQCSS);
 
   xhttp.open("GET", domain + "/w/" + prov_attr + "?price=" + amount_attr + "&duration=" + duration_attr, true);
@@ -93,114 +93,91 @@
       }
     };
 
-
     (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(script);
 
   }
 })(window, document, "1.3", function ($, jquery_loaded) {
-
-
   $(function () {
     $("#tc_display_widget").on("change", '#googleTagManagerCode', function () {
-
-
     });
-
-
-    //$("#tc_display_widget").on("click", '.apply-now', function () {
-    //    window.open($(this).data('href'), '_blank');
-    //});
 
     $("#tc_display_widget").on("click", ".tc-mobile-hamburger", function () {
-      $('.tc-main-content-left').slideToggle()
-
-
+      $('.tc-main-content-left').slideToggle();
     });
     $("#tc_display_widget").on("click", "#tc-close-hamburger", function () {
-      $('.tc-main-content-left').slideToggle()
-
+      $('.tc-main-content-left').slideToggle();
     });
 
     //GREEN RADIO BUTTON CHANGE COLOR
-
     $("#tc_display_widget").on("click", ".tc-green-radio-button", function () {
-      $('.tc-green-radio-button').removeClass('tc-green-radio-button-check')
-      $(this).addClass('tc-green-radio-button-check')
+      $('.tc-green-radio-button').removeClass('tc-green-radio-button-check');
+      $(this).addClass('tc-green-radio-button-check');
 
     });
 
-
     //desktop
     $("#tc_display_widget").on("click", ".tc-more-info", function () {
-      $('.tc-more-info-holder' + $(this).data('index')).slideToggle()
-
-      var indexInfo = $('.tc-more-info' + $(this).data('index'))
+      $('.tc-more-info-holder' + $(this).data('index')).slideToggle();
+      var indexInfo = $('.tc-more-info' + $(this).data('index'));
       var titleNew = $(this).text();
       indexInfo.text(indexInfo.data('title'));
-      indexInfo.data('title', titleNew)
+      indexInfo.data('title', titleNew);
       return false;
     });
 
     $("#tc_display_widget").on("click", ".tc-more-info-sponsored", function () {
-      $('.tc-more-info-holder-sponsored' + $(this).data('index')).slideToggle()
-
-      var indexInfo = $('.tc-more-info-sponsored' + $(this).data('index'))
+      $('.tc-more-info-holder-sponsored' + $(this).data('index')).slideToggle();
+      var indexInfo = $('.tc-more-info-sponsored' + $(this).data('index'));
       var titleNew = $(this).text();
       indexInfo.text(indexInfo.data('title'));
-      indexInfo.data('title', titleNew)
+      indexInfo.data('title', titleNew);
       return false;
     });
+    
     //mobile
     $("#tc_display_widget").on("click", ".tc-more-info-sponsored-mobile", function () {
-      $('.tc-more-info-holder-sponsored' + $(this).data('index')).slideToggle()
-
-      var indexInfo = $('.tc-more-info-sponsored-mobile' + $(this).data('index'))
+      $('.tc-more-info-holder-sponsored' + $(this).data('index')).slideToggle();
+      var indexInfo = $('.tc-more-info-sponsored-mobile' + $(this).data('index'));
       var titleNew = $(this).text();
       indexInfo.text(indexInfo.data('title'));
-      indexInfo.data('title', titleNew)
+      indexInfo.data('title', titleNew);
       return false;
 
     });
     $("#tc_display_widget").on("click", ".tc-more-info-mobile", function () {
-      $('.tc-more-info-holder' + $(this).data('index')).slideToggle()
-
-      var indexInfo = $('.tc-more-info-mobile' + $(this).data('index'))
+      $('.tc-more-info-holder' + $(this).data('index')).slideToggle();
+      var indexInfo = $('.tc-more-info-mobile' + $(this).data('index'));
       var titleNew = $(this).text();
       indexInfo.text(indexInfo.data('title'));
-      indexInfo.data('title', titleNew)
+      indexInfo.data('title', titleNew);
       return false;
     });
 
     //arrow
     $("#tc_display_widget").on("click", ".tc-arrow-up-sponsored", function () {
-      $('.tc-more-info-pros-cons-description-sponsored' + $(this).data('index')).slideToggle()
-
+      $('.tc-more-info-pros-cons-description-sponsored' + $(this).data('index')).slideToggle();
       if ($(this).hasClass('tc-arrow-down-sponsored')) {
-        $(this).removeClass('tc-arrow-down-sponsored')
+        $(this).removeClass('tc-arrow-down-sponsored');
       } else {
-        $(this).addClass('tc-arrow-down-sponsored')
+        $(this).addClass('tc-arrow-down-sponsored');
       }
       return false;
     });
 
     $("#tc_display_widget").on("click", ".tc-arrow-up", function () {
-      $('.tc-more-info-pros-cons-description' + $(this).data('index')).slideToggle()
-
+      $('.tc-more-info-pros-cons-description' + $(this).data('index')).slideToggle();
       if ($(this).hasClass('tc-arrow-down')) {
-        $(this).removeClass('tc-arrow-down')
+        $(this).removeClass('tc-arrow-down');
       } else {
-        $(this).addClass('tc-arrow-down')
+        $(this).addClass('tc-arrow-down');
       }
-
       return false;
     });
 
     $("#tc_display_widget").on("mouseup touchend", ".tc-drag-slidecontainer", function () {
       callAjax(false);
-    })
+    });
     $("#tc_display_widget").on("input", ".tc-drag-slidecontainer", function () {
-
-
       var price = $("#tcRange").val();
       $('#priceHolder').val("\u20AC " + price);
     });
@@ -273,7 +250,7 @@
       }
 
       $("#tc-data-show").hide();
-      $(".tc-loader-content").show()
+      $(".tc-loader-content").show();
       $.ajax({
 
         url: url,
@@ -282,9 +259,8 @@
           $(".tc-loader-content").hide();
           if (fullLoad) {
             $("#tc_display_widget").html(data);
-
-            $('.tc-language-change').removeClass('tc-language-active')
-            $('.tc-language-' + lang).addClass('tc-language-active')
+            $('.tc-language-change').removeClass('tc-language-active');
+            $('.tc-language-' + lang).addClass('tc-language-active');
           } else {
 
             $("#tc-data-show").show();
@@ -293,5 +269,5 @@
         },
       });
     }
-  })
+  });
 });
