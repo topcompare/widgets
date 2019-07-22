@@ -64,24 +64,24 @@
               style="justify-content: space-between; flex-wrap: wrap; margin:-5px; margin-bottom: 0px;">
               <div class="tc-main-content-left-container-holder" style="flex:1; flex-wrap: wrap; margin-bottom: 0">
                 <label class="tc-radio">
-                  <input type="radio" name="tc-choice" value="Travel">
+                  <input type="radio" name="tc-choice" value="assurance-voyage">
                   <span class="tc-checkmark"></span>
                   <div class="tc-right-element">Voyager</div>
                 </label>
                 <label class="tc-radio">
-                  <input type="radio" name="tc-choice" value="Shopping">
+                  <input type="radio" name="tc-choice" value="points">
                   <span class="tc-checkmark"></span>
                   <div class="tc-right-element">Shopping</div>
                 </label>
               </div>
               <div class="tc-main-content-left-container-holder" style="flex:1; flex-wrap: wrap; margin-bottom: 0">
                 <label class="tc-radio">
-                  <input type="radio" name="tc-choice" value="Cashback">
+                  <input type="radio" name="tc-choice" value="cashback">
                   <span class="tc-checkmark"></span>
                   <div class="tc-right-element">Cashback</div>
                 </label>
                 <label class="tc-radio">
-                  <input type="radio" name="tc-choice" value="DailyUse">
+                  <input type="radio" name="tc-choice" value="points">
                   <span class="tc-checkmark"></span>
                   <div class="tc-right-element">Utilisation quotidienne</div>
                 </label>
@@ -89,8 +89,7 @@
             </div>
           </div>
           <div class="tc-tool-CTA">
-            <!--adapt href to widget page-->
-            <a href="cartes-credit" target="_blank">Comparez les cartes</a>
+            <a target="_blank">Comparez les cartes</a>
           </div>
           <div class="tc-powered-by">Powered by
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="global" x="0px"
@@ -156,10 +155,12 @@
         <script>
           $(document).ready(function () {
             $('.tc-tool-CTA>a').click(function () {
-              var url = $(this).attr("href")
-              if($("input[name='tc-choice']:checked").val()!=null){
-              url += "?usage=" + $("input[name='tc-choice']:checked").val();
-              } else { url += "?usage=TopDeals";}
+              var url = "../result_pages/cartes-credit.html";
+              if ($("input[name='tc-choice']:checked").val() != null) {
+                url += "?page=" + $("input[name='tc-choice']:checked").val();
+              } else {
+                url += "?page=meilleures-offres";
+              }
               $(this).attr("href", url);
             });
           });
@@ -268,8 +269,9 @@
           }
 
           .tc-right-element {
-            margin-left: 28px;
-            margin-right: 15%;
+            margin-left: 16px;
+            margin-right: 5px;
+            flex: 1;
           }
 
           .tc-left-element {
@@ -383,7 +385,6 @@
             min-width: 116px;
             display: flex;
             align-items: center;
-            text-align: right;
             position: relative;
             cursor: pointer;
             background-color: #eee;
@@ -396,6 +397,7 @@
           .tc-radio input {
             visibility: hidden;
             cursor: pointer;
+            width:10px;
           }
 
           /* Create a custom radio button */
