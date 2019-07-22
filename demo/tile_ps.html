@@ -140,14 +140,15 @@
         <script>
           $(document).ready(function () {
             $(".tc-tool-CTA>a").click(function () {
+              var url = "page_ps.html";
               if ($("input[id='tc-pi']:checked").length > 0) {
-                var url = "assurancePension";
+                url += "?page=assurance-pension";
               }
               if ($("input[id='tc-ps']:checked").length > 0) {
-                var url = "epargnePension";
+                url += "?page=epargne-pension";
               }
               if ($("input[id='tc-lts']:checked").length > 0) {
-                var url = "epargneLongTerme";
+                url += "?page=epargne-long-terme";
               }
               $(this).attr("href", url);
             });
