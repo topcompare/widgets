@@ -8,7 +8,7 @@
 			document.querySelectorAll(".tc-green-radio-button")[0].classList.remove("tc-green-radio-button-check");
 			document.querySelectorAll(".tc-green-radio-button")[1].classList.add("tc-green-radio-button-check");
 		}
-		document.getElementById("carAge").value = "3-4";
+		document.getElementById("carAge").value = carAge_attr;
     }
   };
 
@@ -120,7 +120,9 @@
     });
 
     $("#tc_display_widget").on("click", ".tc-mobile-hamburger", function () {
-      $('.tc-main-content-left').slideToggle();
+    	$('.tc-main-content-left').slideToggle(function() {
+		$(".tc-mobile-hamburger").toggleClass("expanded");
+	});
     });
     $("#tc_display_widget").on("click", "#tc-close-hamburger", function () {
       $('.tc-main-content-left').slideToggle();
