@@ -83,7 +83,7 @@
     outline: none;
     font-size: 14px;
     border-radius: 3px;
-    border: 1px solid #eeeeee;
+    border: 1px solid #ccc;
 }
 
 *, ::after, ::before {
@@ -850,7 +850,14 @@ input[type="text"]:disabled {
         float: right;
         margin-top: 12px;
         cursor: pointer;
-        background-color: #fafafa;
+        color: #fff;
+	    /* La Libre Eco Styling */
+	    background-color: #ac115d;
+	    border-color: #950f50;
+	    font-weight: 400;
+	    font-size: 16px;
+	    text-align: center;
+	    line-height: 1.4375;
     }
 
     .tc-mobile-hamburger img {
@@ -1017,7 +1024,7 @@ input[type="text"]:disabled {
   margin: 0 auto; /* to center the widget */
 }
 /* Remove sponsored products */
-.tc-box.tc-box-sponsored,.tc-disabled-button{
+.tc-box.tc-box-sponsored,.tc-disabled-button {
   display: none;
 }
 
@@ -1030,28 +1037,18 @@ input[type="text"]:disabled {
 }
 
 /* Remove the labels below the amount slider */
-tc-drag-slidecontainer-values {
+.tc-drag-slidecontainer-values {
 	display: none;
 }
 
 /* La Libre styling for filter button and box */
-.tc-mobile-hamburger {
-    color: #fff;
-    background-color: #ac115d;
-    border-color: #950f50;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    line-height: 1.4375;
-}
-
 .tc-mobile-hamburger::before {
     Content: "Afficher les filtres"
 }
 
 .tc-mobile-hamburger::after {
     font-family: font-custom;
-	content: "\f078";
+    content: "\f078";
 
 }
 .tc-mobile-hamburger.expanded::after {
