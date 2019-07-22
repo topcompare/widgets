@@ -71,7 +71,6 @@
               </label>
             </div>
           </div>
-          <!--adapt href to widget page-->
           <div class="tc-tool-CTA"><a target="_blank">Comparez les taux</a>
           </div>
           <div class="tc-powered-by">Powered by
@@ -141,9 +140,9 @@
               var url = "page_cl.html" + "?loanAmount=" + $("#priceHolder").val().replace(
                 /[^\d,-]/g, '');
               if ($("input[id='tc-checkbox']:checked").length > 0) {
-                url += "?carAge=new";
+                url += "&carAge=new";
               } else {
-                url += "carAge=3-4";
+                url += "&carAge=3-4";
               }
               $(this).attr("href", url);
             });
@@ -169,11 +168,10 @@
           .tc-tool-header {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
           }
 
           .tc-tool-title {
-            font-size: 21px;
             flex: 1;
             margin: auto;
           }

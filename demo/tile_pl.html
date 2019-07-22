@@ -65,8 +65,7 @@
               </div>
             </div>
           </div>
-          <!--adapt href to widget page-->
-          <div class="tc-tool-CTA"><a href="page_pl.html" target="_blank">Comparez les prêts</a>
+          <div class="tc-tool-CTA"><a target="_blank">Comparez les prêts</a>
           </div>
           <div class="tc-powered-by">Powered by
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="global" x="0px"
@@ -136,7 +135,7 @@
               $('#priceHolder').val("\u20AC " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
             });
             $('.tc-tool-CTA>a').click(function () {
-              var url = $(this).attr("href") + "?loanAmount=" + $("#priceHolder").val().replace(
+              var url = "page_pl.html" + "?loanAmount=" + $("#priceHolder").val().replace(
                 /[^\d,-]/g, '');
               $(this).attr("href", url);
             });
@@ -162,11 +161,10 @@
           .tc-tool-header {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
           }
 
           .tc-tool-title {
-            font-size: 21px;
             flex: 1;
             margin: auto;
           }

@@ -19,7 +19,7 @@
   <div class="lle-tool">
     <!-- START Article container -->
     <article id="widgetBlock1Pos1" class="box widget">
-      <h2 class="box_title">Prêts personnel</h2>
+      <h2 class="box_title">Prêts travaux</h2>
       <div class="box_body box_body__border">
 
         <!-- START TopCompare tool code -->
@@ -55,7 +55,6 @@
               </div>
             </div>
           </div>
-          <!--adapt href to widget page-->
           <div class="tc-tool-CTA"><a target="_blank">Comparez les taux</a>
           </div>
           <div class="tc-powered-by">Powered by
@@ -122,11 +121,11 @@
         <script>
           $(document).ready(function () {
             $(".tc-drag-slidecontainer").on("input", function () {
-              var price = "page_rl.html;
+              var price = $("#tcRange").val();
               $('#priceHolder').val("\u20AC " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
             });
             $('.tc-tool-CTA>a').click(function () {
-              var url = $(this).attr("href") + "?loanAmount=" + $("#priceHolder").val().replace(/[^\d,-]/g, '');
+              var url = "page_rl.html" + "?loanAmount=" + $("#priceHolder").val().replace(/[^\d,-]/g, '');
               $(this).attr("href", url);
             });
           });
@@ -151,11 +150,10 @@
           .tc-tool-header {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
           }
 
           .tc-tool-title {
-            font-size: 21px;
             flex: 1;
             margin: auto;
           }
