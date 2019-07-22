@@ -3,6 +3,12 @@
   xhttp.onreadystatechange = function () {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("tc_display_widget").innerHTML = xhttp.responseText;
+		// change the default values on filter UI
+		if (greenOrClassicCar_attr != "classic") {
+			document.querySelectorAll(".tc-green-radio-button")[0].classList.remove("tc-green-radio-button-check");
+			document.querySelectorAll(".tc-green-radio-button")[1].classList.add("tc-green-radio-button-check");
+		}
+		document.getElementById("carAge").value = "3-4";
     }
   };
 
@@ -40,6 +46,8 @@
   }
   var amount_attr = 7500;
   var duration_attr = 24;
+  var carAge_attr = "new";
+  var greenOrClassicCar_attr = "classic";
   if (typeof qs.loanAmount !== "undefined") { 
     amount_attr = qs.loanAmount;
   } else if (document.getElementById("tc_display_widget").getAttribute("data-loan-amount") !== null) {
@@ -49,6 +57,16 @@
     duration_attr = qs.loanDuration;
   } else if (document.getElementById("tc_display_widget").getAttribute("data-loan-duration") !== null){
     duration_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-duration");
+  }
+  if (typeof qs.carAge !== "undefined") { 
+    carAge_attr = qs.carAge;
+  } else if (document.getElementById("tc_display_widget").getAttribute("data-car-age") !== null){
+    carAge_attr = document.getElementById("tc_display_widget").getAttribute("data-car-age");
+  }
+  if (typeof qs.greenOrClassicCar !== "undefined") { 
+    greenOrClassicCar_attr = qs.greenOrClassicCar;
+  } else if (document.getElementById("tc_display_widget").getAttribute("data-car-type") !== null){
+    greenOrClassicCar_attr = document.getElementById("tc_display_widget").getAttribute("data-car-type");
   }
 
   gtmTCWidget = document.getElementById("tc_display_widget").getAttribute("data-gtm");
@@ -74,7 +92,7 @@
   EQCSS.src = domain + "/js/EQCSS.min.js";
   window.onload = (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(EQCSS);
 
-  xhttp.open("GET", domain + "/w/" + prov_attr + "?price=" + amount_attr + "&duration=" + duration_attr, true);
+  xhttp.open("GET", domain + "/w/" + prov_attr + "?price=" + amount_attr + "&duration=" + duration_attr + "&carAge=" + carAge_attr+ "&greenOrClassicCar=" + greenOrClassicCar_attr, true);
   xhttp.send();
 })();
 
