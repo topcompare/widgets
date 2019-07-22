@@ -142,9 +142,9 @@
               var url = "page_cl.html" + "?loanAmount=" + $("#priceHolder").val().replace(
                 /[^\d,-]/g, '');
               if ($("input[id='tc-checkbox']:checked").length > 0) {
-                url += "?greenCar='green'";
+                url += "?greenCar=green";
               } else {
-                url += "?greenCar='classic'";
+                url += "?greenCar=classic";
               }
               $(this).attr("href", url);
             });
