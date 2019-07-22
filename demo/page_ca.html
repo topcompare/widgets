@@ -1,0 +1,76 @@
+<html>
+
+<head>
+	<meta charset=utf-8>
+	<style>
+		  body {
+    font-family: Helvetica;
+  }
+</style>
+
+</head>
+
+
+<body>
+	<h1>Les comptes courants</h1>
+	<p>Le compte courant, aussi connu sous le nom de compte à vue, vous sert à réaliser vos opérations financières de tous
+		les jours. Le terme “compte bancaire” est également utilisé pour parler d’un compte à vue, mais est plus générique,
+		tant il peut également se référer à un compte épargne. Ce dernier vous permet de recevoir votre salaire, vos
+		allocations familiales ainsi que d’éventuels remboursements, mais également de payer toutes vos factures et de
+		réaliser des virements bancaires et retraits, où que vous soyez. Par ailleurs, il vous est généralement possible de
+		lier à ce compte courant une carte de crédit ou de débit.</p>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script type="application/javascript">
+   window.addEventListener('message', function (event) {
+       if (event.data.hasOwnProperty("FrameHeight")) {
+           $("#tc-iframe").css("height", event.data.FrameHeight);
+       }
+       if (event.data.hasOwnProperty("FrameHeightRequest")) {
+           setIframeHeight();
+       }
+   });
+
+   function setIframeHeight() {
+       var ifrm = document.getElementById("tc-iframe");
+       var height = ifrm.contentWindow.postMessage("FrameHeight", "*");
+   }
+
+   function parse_query_string(query) {
+       var vars = query.split("?");
+       var query_string = {};
+       for (var i = 0; i < vars.length; i++) {
+           var pair = vars[i].split("=");
+           var key = decodeURIComponent(pair[0]);
+           var value = decodeURIComponent(pair[1]);
+           if (typeof query_string[key] === "undefined") {
+               query_string[key] = decodeURIComponent(value);
+           } else if (typeof query_string[key] === "string") {
+               var arr = [query_string[key], decodeURIComponent(value)];
+               query_string[key] = arr;
+           } else {
+               query_string[key].push(decodeURIComponent(value));
+           }
+       }
+       return query_string;
+   }
+
+   var query = window.location.search.substring(1);
+   var qs = parse_query_string(query);
+
+   $(function () {
+       if (typeof qs.productSubcategory !== "undefined") {
+           var url = $("#tc-iframe").attr("src");
+           $("#tc-iframe").attr("src", url + "&productSubcategory=" + qs.productSubcategory);
+       }
+   });
+</script>
+
+<iframe id="tc-iframe" src="https://www.topcompare.be/fr/compte-courant?providerResultsIntegration=true"
+   style="width: 100%; height: 100%; border: 0" onload="setIframeHeight()">
+</iframe>
+
+</body>
+
+</html>
