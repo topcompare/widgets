@@ -1016,12 +1016,12 @@ input[type="text"]:disabled {
   max-width: 1180px; /* Override css on top of this page to not take the full width */
   margin: 0 auto; /* to center the widget */
 }
-// Remove sponsored products
+/* Remove sponsored products */
 .tc-box.tc-box-sponsored,.tc-disabled-button{
   display: none;
 }
 
-// Remove the duplicate buttons in the more details box
+/* Remove the duplicate buttons in the more details box */
 .tc-more-info-content>.tc-box-row {
     display: none;
 }
@@ -1029,7 +1029,42 @@ input[type="text"]:disabled {
     display: none;
 }
 
-// Remove the labels below the amount slider
+/* Remove the labels below the amount slider */
 tc-drag-slidecontainer-values {
 	display: none;
+}
+
+/* La Libre styling for filter button and box */
+.tc-mobile-hamburger {
+    color: #fff;
+    background-color: #ac115d;
+    border-color: #950f50;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.4375;
+}
+
+.tc-mobile-hamburger::before {
+    Content: "Afficher les filtres"
+}
+
+.tc-mobile-hamburger::after {
+    font-family: font-custom;
+	content: "\f078";
+
+}
+.tc-mobile-hamburger.expanded::after {
+    font-family: font-custom;
+    content: "\e775";
+}
+
+.tc-mobile-hamburger>img {
+    display:none
+}
+
+@element #tc_display_widget and  (max-width: 991px) {
+	.tc-main-content-heading {
+	    display: none;
+	}
 }
