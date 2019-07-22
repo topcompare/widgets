@@ -1,0 +1,42 @@
+<html>
+
+<head>
+	<meta charset=utf-8>
+	<style>
+		  body {
+    font-family: Helvetica;
+  }
+</style>
+
+</head>
+
+
+<body>
+	<h1>Les comptes courants</h1>
+	<p>Une carte de crédit est un moyen de paiement qui vous permet d’effectuer des transactions à crédit et dont le montant sera débité de votre compte plus tard. Il existe trois principaux émetteurs de cartes de crédit à travers le monde : Visa, Mastercard et American Express. Les-dites cartes de crédit sont ensuite relayées par des institutions financières ayant un accord avec l'émetteur. 
+</p>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="application/javascript">
+		window.addEventListener('message', function (event) {
+		if (event.data.hasOwnProperty("FrameHeight")) {
+			$("#tc-iframe").css("height", event.data.FrameHeight);        
+		}
+		if (event.data.hasOwnProperty("FrameHeightRequest")) {
+			setIframeHeight();    
+		}
+	});
+
+	function setIframeHeight() {
+		var ifrm = document.getElementById("tc-iframe");	
+		var height = ifrm.contentWindow.postMessage("FrameHeight", "*");   
+	}
+
+	</script>
+	<iframe id="tc-iframe" src="https://www.topcompare.be/fr/cartes-de-credit/meilleures-offres?providerResultsIntegration=true" style="width: 100%; height: 100%; border: 0"
+	 onload="setIframeHeight()">
+	</iframe>
+
+</body>
+
+</html>
