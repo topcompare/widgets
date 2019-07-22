@@ -135,16 +135,17 @@
             </svg>
           </div>
         </div>
-
+        
         <script>
           $(document).ready(function () {
             $('.tc-tool-CTA>a').click(function () {
-              var url = "page_cl.html" + "?loanAmount=" + $("#priceHolder").val().replace(
+              var url = "page_cl.html"
+              url += "?loanAmount=" + $("#priceHolder").val().replace(
                 /[^\d,-]/g, '');
               if ($("input[id='tc-checkbox']:checked").length > 0) {
-                url += "?greenCar=green";
+                url += "&greenOrClassicCar=green";
               } else {
-                url += "?greenCar=classic";
+                url += "&greenOrClassicCar=classic";
               }
               $(this).attr("href", url);
             });
