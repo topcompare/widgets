@@ -55,7 +55,7 @@
                 </defs>
               </svg>
             </div>
-            <div class="tc-tool-title">Roulez malin en comparant les taux de tous les prêts voirture du marché;
+            <div class="tc-tool-title">Roulez malin en comparant tous les prêts voiture du marché;
             </div>
           </div>
           <div class="tc-tool-content">
@@ -141,9 +141,9 @@
               var url = $(this).attr("href") + "?loanAmount=" + $("#priceHolder").val().replace(
                 /[^\d,-]/g, '');
               if ($("input[id='tc-checkbox']:checked").length > 0) {
-                url += "?carAge='new'";
+                url += "?carAge=new";
               } else {
-                url += "carAge='3-4'";
+                url += "carAge=3-4";
               }
               $(this).attr("href", url);
             });
