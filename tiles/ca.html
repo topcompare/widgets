@@ -80,7 +80,7 @@
             </div>
           </div>
           <!--adapt href to widget page-->
-          <div class="tc-tool-CTA"><a href="comptes-courants" target="_blank">Comparez les
+          <div class="tc-tool-CTA"><a target="_blank">Comparez les
               comptes</a>
           </div>
           <div class="tc-powered-by">Powered by
@@ -147,7 +147,7 @@
         <script>
           $(document).ready(function () {
             $(".tc-tool-CTA>a").click(function () {
-              var url = $(this).attr("href");
+              var url = "page_ca.html";
               if ($("input[id='tc-checkbox']:checked").length > 0) {
                 url += "?productSubcategory=6";
               }
