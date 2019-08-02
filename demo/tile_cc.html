@@ -13,6 +13,7 @@
   </style>
   <link rel="manifest" href="/manifest.json">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="tc-tiles-styles.css">
 </head>
 
 <body style="background-color:powderblue; display: flex">
@@ -24,14 +25,15 @@
 
         <!-- START TopCompare tool code -->
 
-        <div class="tc-tool-tile">
+        <div class="tc-tool-tile tc-cc">
           <div class="tc-tool-header">
             <div class="tc-tool-icon">
               <svg width="35px" height="35px" viewBox="0 0 35 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>iconsEU2/CreditCards/</title>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="iconsEU2/CreditCards/" fill="#56924B">
+                  <!-- LaLibre Branding Suggestion -->
+                  <g id="iconsEU2/CreditCards/" fill="#4a88a7">
                     <g id="Group" transform="translate(4.000000, 4.000000)">
                       <path
                         d="M22.868625,16.818075 C23.6161823,16.818075 24.235875,16.1985502 24.235875,15.450825 L24.235875,2.447325 C24.235875,1.69843479 23.6180178,1.080075 22.868625,1.080075 L2.446875,1.080075 C1.69631734,1.080075 1.079625,1.69660013 1.079625,2.447325 L1.079625,15.450825 C1.079625,16.2003858 1.69815184,16.818075 2.446875,16.818075 L22.868625,16.818075 Z M2.446875,17.898075 C1.10201171,17.898075 -0.000375,16.7971812 -0.000375,15.450825 L-0.000375,2.447325 C-0.000375,1.10006702 1.09991537,7.5e-05 2.446875,7.5e-05 L22.868625,7.5e-05 C24.214682,7.5e-05 25.315875,1.10216376 25.315875,2.447325 L25.315875,15.450825 C25.315875,16.7950832 24.2125844,17.898075 22.868625,17.898075 L2.446875,17.898075 Z"
@@ -153,286 +155,18 @@
         </div>
 
         <script>
-          $(document).ready(function () {
-            $('.tc-tool-CTA>a').click(function () {
+          $(".tc-cc").ready(function () {
+            $(".tc-cc").click(function () {
               var url = "page_cc.html";
-              if ($("input[name='tc-choice']:checked").val() != null) {
-                url += "?page=" + $("input[name='tc-choice']:checked").val();
+              if ($("input[name='tc-choice']:checked", this).val() != null) {
+                url += "?page=" + $("input[name='tc-choice']:checked", this).val();
               } else {
                 url += "?page=meilleures-offres";
               }
-              $(this).attr("href", url);
+              $(".tc-tool-CTA>a", this).attr("href", url);
             });
           });
         </script>
-
-        <style>
-          .tc-tool-tile {
-            background-color: white;
-            padding: 10px;
-            box-sizing: content-box;
-            border-radius: 5px;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: -ms-flex;
-            display: flex;
-            -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            text-align: left;
-          }
-
-          .tc-tool-header {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
-          }
-
-          .tc-tool-title {
-            flex: 1;
-            margin: auto;
-          }
-
-          .tc-tool-title>h2.teaser_title {
-            margin-top: unset;
-          }
-
-          .tc-tool-content {
-            margin-bottom: 5px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-          }
-
-          .tc-tool-icon {
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            padding: 11px;
-            margin-right: 20px;
-            background-color: #eee;
-          }
-
-          .tc-powered-by {
-            font-size: 9px;
-            text-align: right;
-            display: block;
-            color: #757575;
-            padding-top: 10px;
-          }
-
-          .tc-powered-by svg {
-            width: 90px;
-            vertical-align: middle;
-          }
-
-          .tc-tool-icon svg {
-            height: 100%;
-          }
-
-          .tc-tool-CTA a {
-            display: block;
-            width: 100%;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2.2;
-            background-color: #2c8bb1;
-            border-bottom: 4px solid #1c546b;
-            border-radius: 4px;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-          }
-
-          .tc-tool-CTA a:hover {
-            background-color: #1c546b;
-          }
-
-          .tc-main-content-left-container-holder {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 12px;
-          }
-
-          .tc-main-content-left-container-holder input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            outline: none;
-            font-size: 14px;
-            border-radius: 3px;
-            border: 1px solid #eeeeee;
-          }
-
-          .tc-right-element {
-            margin-left: 16px;
-            margin-right: 5px;
-            flex: 1;
-          }
-
-          .tc-left-element {
-            margin-right: 20px;
-          }
-
-          *,
-          ::after,
-          ::before {
-            box-sizing: border-box !important;
-          }
-
-          /* Drag slider specific */
-          .tc-main-content-left-container-holder .tc-drag-slidecontainer {
-            width: 100%;
-            padding: 0px;
-            border: none;
-            margin-top: 15px;
-          }
-
-          .tc-main-content-left-container-holder .tc-drag-slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 10px;
-            padding: 0px;
-            margin: 0px;
-            border-radius: 5px;
-            background: #d7dcdf;
-            outline: none;
-            -webkit-transition: 0.2s;
-            transition: opacity 0.2s;
-          }
-
-          .tc-drag-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: #76aa43;
-            cursor: pointer;
-          }
-
-          .tc-drag-slider::-moz-range-thumb {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: #4caf50;
-            cursor: pointer;
-          }
-
-          /*End of drag slider*/
-
-          /* Toggle switch specific */
-          .tc-tool-switch {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 40px;
-            height: 22px;
-            min-width: 40px;
-            margin-right: 8px;
-          }
-
-          .tc-tool-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-          }
-
-          .tc-tool-switch .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 22px;
-          }
-
-          .tc-tool-switch .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 100%;
-          }
-
-          .tc-tool-switch input:checked+.slider {
-            background-color: #4caf50;
-          }
-
-          .tc-tool-switch input:checked+.slider:before {
-            -webkit-transform: translateX(18px);
-            -ms-transform: translateX(18px);
-            transform: translateX(18px);
-          }
-
-          /* End of toggle switch*/
-
-          /* Radio input specific */
-          .tc-radio {
-            flex: 1;
-            min-width: 116px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
-            background-color: #eee;
-            border-radius: 5px;
-            height: 30px;
-            margin: 5px;
-            margin-bottom: 5px;
-          }
-
-          .tc-radio input {
-            visibility: hidden;
-            cursor: pointer;
-            width:10px;
-          }
-
-          /* Create a custom radio button */
-          .tc-checkmark {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            bottom: 0;
-            right: 0;
-            height: 22px;
-            width: 22px;
-            background-color: white;
-            border: 1px solid #a5a5a5;
-            border-radius: 50%;
-          }
-
-          /* When the radio button is checked, add a blue background */
-          .tc-radio input:checked~.tc-checkmark {
-            background-color: #4caf50;
-            border: 0;
-          }
-
-          /* Create the indicator (the dot/circle - hidden when not checked) */
-          .tc-checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-          }
-
-          /* Show the indicator (dot/circle) when checked */
-          .tc-radio input:checked~.tc-checkmark:after {
-            display: block;
-          }
-
-          /* End of radio input */
-        </style>
 
         <!-- END TopCompare tool code -->
 

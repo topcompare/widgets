@@ -13,6 +13,7 @@
   </style>
   <link rel="manifest" href="/manifest.json">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="tc-tiles-styles.css">
 </head>
 
 <body style="background-color:powderblue; display: flex">
@@ -24,14 +25,15 @@
 
         <!-- START TopCompare tool code -->
 
-        <div class="tc-tool-tile">
+        <div class="tc-tool-tile tc-pl">
           <div class="tc-tool-header">
             <div class="tc-tool-icon">
               <svg width="35px" height="35px" viewBox="0 0 35 34" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>iconsEU2/PersonalLoans</title>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="iconsEU2/PersonalLoans" fill="#56924B">
+                  <!-- LaLibre Branding Suggestion -->
+                  <g id="iconsEU2/PersonalLoans" fill="#4a88a7">
                     <path
                       d="M20.2440884,11.717826 C20.0100121,12.0051014 19.7407425,12.2293563 19.4428272,12.3832247 C18.8437229,12.6925982 18.1603183,12.6917798 17.5661246,12.3832247 C17.2682094,12.2293563 16.9989398,12.0059199 16.764045,11.717826 C16.6363671,11.5615023 16.525058,11.3888096 16.4268442,11.2054772 L19.0606118,11.2054772 C19.3855358,11.2054772 19.6490763,10.9411183 19.6490763,10.6153757 C19.6490763,10.2904516 19.3855358,10.0269112 19.0606118,10.0269112 L16.0372627,10.0269112 C16.0053432,9.82066216 15.9873373,9.61032087 15.9873373,9.39670579 C15.9873373,9.1912752 16.0053432,8.98993684 16.0356258,8.79187229 L19.4485564,8.79187229 C19.7742989,8.79187229 20.0386578,8.52833184 20.0386578,8.20258931 C20.0386578,7.87766522 19.7742989,7.61248788 19.4485564,7.61248788 L16.4153859,7.61248788 C16.5168736,7.42097091 16.6306379,7.23845688 16.764045,7.07476716 C16.9981213,6.78831015 17.2682094,6.56405524 17.5669431,6.41018691 C18.1627737,6.0999949 18.8453598,6.0999949 19.4428272,6.41018691 C19.7407425,6.56405524 20.0108306,6.78831015 20.2440884,7.07476716 C20.4503375,7.32603087 20.8202762,7.36531641 21.0739953,7.15988581 C21.325259,6.95363677 21.3629076,6.58287956 21.157477,6.32997895 C20.8210947,5.91748086 20.4266024,5.59255677 19.9854587,5.36339117 C19.0491535,4.87886961 17.9581615,4.87886961 17.0234932,5.36339117 C16.5823494,5.59255677 16.1878572,5.91748086 15.8506564,6.3307974 C15.5453751,6.70564685 15.3088435,7.1394246 15.132877,7.61248788 L13.9788645,7.61248788 C13.653122,7.61248788 13.3895815,7.87766522 13.3895815,8.20258931 C13.3895815,8.52833184 13.653122,8.79187229 13.9788645,8.79187229 L14.8570598,8.79187229 C14.8341433,8.99239219 14.8079529,9.19209364 14.8079529,9.39670579 C14.8079529,9.61032087 14.8341433,9.81820681 14.8595152,10.0269112 L13.5901014,10.0269112 C13.2651773,10.0269112 13,10.2904516 13,10.6153757 C13,10.9411183 13.2651773,11.2054772 13.5901014,11.2054772 L15.1443353,11.2054772 C15.3186648,11.6687191 15.5511042,12.0951308 15.8506564,12.4626142 C16.1878572,12.8759307 16.5823494,13.2016733 17.0226748,13.4300204 C17.4900089,13.6730996 17.9884441,13.7958669 18.5040667,13.7958669 C19.0188709,13.7958669 19.5164876,13.6730996 19.9854587,13.4300204 C20.4274209,13.2008548 20.8210947,12.8751123 21.157477,12.4626142 C21.3629076,12.2113505 21.325259,11.8389564 21.0739953,11.6335258 C20.8219131,11.4280952 20.4503375,11.4657438 20.2440884,11.717826"
                       id="Fill-1"></path>
@@ -129,284 +131,18 @@
         </div>
 
         <script>
-          $(document).ready(function () {
-            $(".tc-drag-slidecontainer").on("input", function () {
-              var price = $("#tcRange").val();
-              $('#priceHolder').val("\u20AC " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+          $(".tc-pl").ready(function () {
+            $(".tc-pl").on("input", function () {
+              var price = $("#tcRange", this).val();
+              $('#priceHolder', this).val("\u20AC " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
             });
-            $('.tc-tool-CTA>a').click(function () {
-              var url = "page_pl.html" + "?loanAmount=" + $("#priceHolder").val().replace(
+            $('.tc-pl').click(function () {
+              var url = "page_pl.html" + "?loanAmount=" + $("#priceHolder", this).val().replace(
                 /[^\d,-]/g, '');
-              $(this).attr("href", url);
+              $(".tc-tool-CTA>a", this).attr("href", url);
             });
           });
         </script>
-
-        <style>
-          .tc-tool-tile {
-            background-color: white;
-            padding: 10px;
-            box-sizing: content-box;
-            border-radius: 5px;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: -ms-flex;
-            display: flex;
-            -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            text-align: left;
-          }
-
-          .tc-tool-header {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
-          }
-
-          .tc-tool-title {
-            flex: 1;
-            margin: auto;
-          }
-
-          .tc-tool-title>h2.teaser_title {
-            margin-top: unset;
-          }
-
-          .tc-tool-content {
-            margin-bottom: 5px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-          }
-
-          .tc-tool-icon {
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            padding: 11px;
-            margin-right: 20px;
-            background-color: #eee;
-          }
-
-          .tc-powered-by {
-            font-size: 9px;
-            text-align: right;
-            display: block;
-            color: #757575;
-            padding-top: 10px;
-          }
-
-          .tc-powered-by svg {
-            width: 90px;
-            vertical-align: middle;
-          }
-
-          .tc-tool-icon svg {
-            height: 100%;
-          }
-
-          .tc-tool-CTA a {
-            display: block;
-            width: 100%;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2.2;
-            background-color: #2c8bb1;
-            border-bottom: 4px solid #1c546b;
-            border-radius: 4px;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-          }
-
-          .tc-tool-CTA a:hover {
-            background-color: #1c546b;
-          }
-
-          .tc-main-content-left-container-holder {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 12px;
-          }
-
-          .tc-main-content-left-container-holder input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            outline: none;
-            font-size: 14px;
-            border-radius: 3px;
-            border: 1px solid #eeeeee;
-          }
-
-          .tc-right-element {
-            margin-left: 28px;
-            margin-right: 15%;
-          }
-
-          .tc-left-element {
-            margin-right: 20px;
-          }
-
-          *,
-          ::after,
-          ::before {
-            box-sizing: border-box !important;
-          }
-
-          /* Drag slider specific */
-          .tc-main-content-left-container-holder .tc-drag-slidecontainer {
-            width: 100%;
-            padding: 0px;
-            border: none;
-            margin-top: 15px;
-          }
-
-          .tc-main-content-left-container-holder .tc-drag-slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 10px;
-            padding: 0px;
-            margin: 0px;
-            border-radius: 5px;
-            background: #d7dcdf;
-            outline: none;
-            -webkit-transition: 0.2s;
-            transition: opacity 0.2s;
-          }
-
-          .tc-drag-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: #76aa43;
-            cursor: pointer;
-          }
-
-          .tc-drag-slider::-moz-range-thumb {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: #4caf50;
-            cursor: pointer;
-          }
-
-          /*End of drag slider*/
-
-          /* Toggle switch specific */
-          .tc-tool-switch {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 40px;
-            height: 22px;
-            min-width: 40px;
-            margin-right: 8px;
-          }
-
-          .tc-tool-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-          }
-
-          .tc-tool-switch .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 22px;
-          }
-
-          .tc-tool-switch .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 100%;
-          }
-
-          .tc-tool-switch input:checked+.slider {
-            background-color: #4caf50;
-          }
-
-          .tc-tool-switch input:checked+.slider:before {
-            -webkit-transform: translateX(18px);
-            -ms-transform: translateX(18px);
-            transform: translateX(18px);
-          }
-
-          /* End of toggle switch*/
-
-          /* Radio input specific */
-          .tc-radio {
-            width: 40%;
-            min-width: 116px;
-            display: flex;
-            align-items: center;
-            text-align: right;
-            position: relative;
-            cursor: pointer;
-            background-color: #eee;
-            border-radius: 5px;
-            height: 30px;
-            margin-bottom: 5px;
-          }
-
-          .tc-radio input {
-            visibility: hidden;
-            cursor: pointer;
-          }
-
-          /* Create a custom radio button */
-          .tc-checkmark {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            bottom: 0;
-            right: 0;
-            height: 22px;
-            width: 22px;
-            background-color: white;
-            border: 1px solid #a5a5a5;
-            border-radius: 50%;
-          }
-
-          /* When the radio button is checked, add a blue background */
-          .tc-radio input:checked~.tc-checkmark {
-            background-color: #4caf50;
-            border: 0;
-          }
-
-          /* Create the indicator (the dot/circle - hidden when not checked) */
-          .tc-checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-          }
-
-          /* Show the indicator (dot/circle) when checked */
-          .tc-radio input:checked~.tc-checkmark:after {
-            display: block;
-          }
-
-          /* End of radio input */
-        </style>
 
         <!-- END TopCompare tool code -->
 

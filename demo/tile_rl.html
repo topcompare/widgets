@@ -13,6 +13,7 @@
   </style>
   <link rel="manifest" href="/manifest.json">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="tc-tiles-styles.css">
 </head>
 
 <body style="background-color:powderblue; display: flex">
@@ -24,25 +25,26 @@
 
         <!-- START TopCompare tool code -->
 
-        <div class="tc-tool-tile">
+        <div class="tc-tool-tile tc-rl">
           <div class="tc-tool-header">
             <div class="tc-tool-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32">
+              <!-- LaLibre Branding Suggestion -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4a88a7" viewBox="0 0 32 32">
                 <g id="icon-mo">
-                  <path id="Fill 1" fill="#56924B" fill-rule="evenodd"
+                  <path id="Fill 1" fill-rule="evenodd"
                     d="M7.44833 4.83421C7.44049 4.78745 7.43892 4.7398 7.42323 4.69745C7.41068 4.66304 7.38871 4.63657 7.37067 4.60569C7.34949 4.56775 7.33302 4.52717 7.30399 4.49541C7.2781 4.46541 7.24437 4.44688 7.21378 4.42306C7.18475 4.401 7.16044 4.37365 7.12749 4.35777C7.08983 4.33835 7.04591 4.33571 7.00511 4.32688C6.97452 4.31983 6.94549 4.30483 6.91333 4.30394L6.90313 4.30306H6.90235H6.90157L3.7755 4.23071C3.77393 4.23071 3.77236 4.2316 3.77158 4.23248C3.76922 4.2316 3.76687 4.23071 3.76452 4.23071C3.54408 4.23071 3.35895 4.37629 3.2656 4.58275C3.26089 4.59334 3.25227 4.60128 3.24834 4.61275C3.23265 4.65157 3.2303 4.69745 3.22167 4.74157C3.2154 4.77863 3.20049 4.81304 3.19971 4.85274C3.19971 4.85539 3.20128 4.85715 3.20128 4.8598C3.20128 4.86245 3.19971 4.86421 3.19971 4.86597V10.2878C3.19971 10.638 3.4523 10.923 3.76452 10.923C4.07595 10.923 4.32854 10.638 4.32854 10.2878V5.51447L6.33754 5.56123V7.64083C6.33754 7.99111 6.59014 8.2761 6.90235 8.2761C7.21378 8.2761 7.46637 7.99111 7.46637 7.64083V4.93921C7.46637 4.90215 7.45304 4.8695 7.44833 4.83421Z"
                     clip-rule="evenodd" />
-                  <path id="Fill 3" fill="#56924B" fill-rule="evenodd"
+                  <path id="Fill 3" fill-rule="evenodd"
                     d="M25.8592 12.4247C25.6784 12.6793 25.4704 12.878 25.2408 13.0155C24.7776 13.2905 24.2504 13.2897 23.7912 13.0155C23.5624 12.8789 23.3536 12.6802 23.1728 12.4247C23.0744 12.2854 22.988 12.1319 22.912 11.9695H24.9448C25.196 11.9695 25.4 11.7353 25.4 11.4461C25.4 11.1578 25.196 10.9235 24.9448 10.9235H22.6112C22.5864 10.7408 22.5728 10.5545 22.5728 10.3646C22.5728 10.1818 22.5872 10.0035 22.6096 9.82786H25.2448C25.4968 9.82786 25.7008 9.59364 25.7008 9.30442C25.7008 9.01519 25.4968 8.78098 25.2448 8.78098H22.904C22.9816 8.61064 23.0696 8.44917 23.1728 8.30367C23.3536 8.04816 23.5616 7.85032 23.792 7.7128C24.252 7.43778 24.7784 7.43778 25.2408 7.7128C25.4712 7.85032 25.6784 8.04905 25.8592 8.30367C26.0176 8.52635 26.3041 8.56184 26.5001 8.37819C26.6945 8.19543 26.7233 7.86629 26.5649 7.64272C26.3049 7.27631 26 6.98797 25.6592 6.78481C24.9368 6.35363 24.0944 6.35363 23.3736 6.78481C23.032 6.98797 22.7272 7.27631 22.4672 7.64272C22.2319 7.97541 22.0487 8.36045 21.9127 8.78098H21.0223C20.7711 8.78098 20.5671 9.01519 20.5671 9.30442C20.5671 9.59364 20.7711 9.82786 21.0223 9.82786H21.7007C21.6823 10.0053 21.6623 10.1827 21.6623 10.3646C21.6623 10.5536 21.6823 10.7381 21.7023 10.9235H20.7215C20.4711 10.9235 20.2671 11.1578 20.2671 11.4461C20.2671 11.7353 20.4711 11.9695 20.7215 11.9695H21.9215C22.0567 12.3812 22.2359 12.7591 22.4672 13.0856C22.728 13.4529 23.0328 13.7412 23.3728 13.9435C23.7328 14.16 24.1176 14.2691 24.516 14.2691C24.9128 14.2691 25.2976 14.16 25.6592 13.9444C26.0008 13.7404 26.3049 13.452 26.5649 13.0856C26.7233 12.862 26.6945 12.5329 26.5001 12.3501C26.3057 12.1674 26.0184 12.2011 25.8592 12.4247Z"
                     clip-rule="evenodd" />
-                  <path id="Fill 5" fill="#56924B" fill-rule="evenodd"
+                  <path id="Fill 5" fill-rule="evenodd"
                     d="M19.753 16.4502C19.524 16.2822 19.3072 16.0963 19.099 15.9016C19.0669 15.8714 19.034 15.8412 19.0028 15.8109C18.7946 15.6091 18.596 15.3966 18.413 15.1699C17.4068 13.9154 16.7988 12.3035 16.7988 10.5458C16.7988 9.98213 16.8682 9.43446 16.9862 8.90723C17.0868 8.45736 17.2273 8.0226 17.4051 7.60918C18.4919 5.08064 20.9318 3.31226 23.7671 3.31226C27.6103 3.31226 30.7363 6.5574 30.7363 10.5458C30.7363 14.5351 27.6103 17.7811 23.7671 17.7811C22.2718 17.7811 20.8901 17.285 19.753 16.4502ZM2.56592 15.17L13.5804 6.10315L15.904 8.01556C15.6638 8.81573 15.5354 9.66569 15.5354 10.5459C15.5354 12.2502 16.0228 13.8355 16.8538 15.17H2.56592ZM11.6633 29.6103V23.5183H16.1067V29.6103C16.1067 29.6494 16.1215 29.6823 16.1275 29.7188H11.6416C11.6477 29.6823 11.6633 29.6494 11.6633 29.6103ZM24.3916 19.0605C28.6399 18.7271 32 15.0401 32 10.5458C32 5.83371 28.3068 2 23.7671 2C20.5319 2 17.7356 3.95064 16.3903 6.77436L13.9713 4.78282C13.7423 4.59611 13.417 4.59611 13.1889 4.78282L0.398981 15.3113C0.191684 15.4811 0.112755 15.7665 0.201225 16.0226C0.288827 16.2795 0.524747 16.4502 0.790156 16.4502H17.8284C19.1927 17.9288 21.0601 18.897 23.1426 19.0605V29.6104C23.1426 29.6495 23.1582 29.6824 23.1643 29.7188H17.334C17.3401 29.6824 17.3548 29.6495 17.3548 29.6104V23.2588C17.3548 23.1983 17.3375 23.145 17.3218 23.0899C17.3453 23.0232 17.3635 22.9529 17.3635 22.8783C17.3635 22.5253 17.0842 22.2381 16.739 22.2381H11.0388C10.6944 22.2381 10.4143 22.5253 10.4143 22.8783C10.4143 22.9458 10.4333 23.0072 10.4516 23.0685C10.4333 23.1299 10.4143 23.1912 10.4143 23.2588V29.6104C10.4143 29.6495 10.4299 29.6824 10.436 29.7188H4.40787C4.41307 29.6824 4.42869 29.6495 4.42869 29.6104V17.9243C4.42869 17.5705 4.1494 17.2833 3.8042 17.2833C3.45986 17.2833 3.18057 17.5705 3.18057 17.9243V29.6104C3.18057 29.6495 3.19532 29.6824 3.20139 29.7188H0.623624C0.279287 29.7188 0 30.006 0 30.3599C0 30.7128 0.279287 31 0.623624 31H31.1757C31.5201 31 31.8002 30.7128 31.8002 30.3599C31.8002 30.006 31.5201 29.7188 31.1757 29.7188H24.3699C24.376 29.6824 24.3916 29.6495 24.3916 29.6104V19.0605Z"
                     clip-rule="evenodd" />
                 </g>
               </svg>
             </div>
-            <div class="tc-tool-title">Empruntez malin en comparant les taux de tous les pr&#234;ts r&#233;novation du
-              march&#233;</div>
+            <div class="tc-tool-title">Empruntez malin en comparant les taux de tous les prêts rénovation du
+              marché</div>
           </div>
           <div class="tc-tool-content">
             <div class="tc-main-content-left-container-holder">
@@ -119,283 +121,17 @@
         </div>
 
         <script>
-          $(document).ready(function () {
-            $(".tc-drag-slidecontainer").on("input", function () {
-              var price = $("#tcRange").val();
-              $('#priceHolder').val("\u20AC " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+          $(".tc-rl").ready(function () {
+            $(".tc-rl").on("input", function () {
+              var price = $("#tcRange", this).val();
+              $('#priceHolder', this).val("\u20AC " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
             });
-            $('.tc-tool-CTA>a').click(function () {
-              var url = "page_rl.html" + "?loanAmount=" + $("#priceHolder").val().replace(/[^\d,-]/g, '');
-              $(this).attr("href", url);
+            $('.tc-rl').click(function () {
+              var url = "page_rl.html" + "?loanAmount=" + $("#priceHolder", this).val().replace(/[^\d,-]/g, '');
+              $(".tc-tool-CTA>a", this).attr("href", url);
             });
           });
         </script>
-
-        <style>
-          .tc-tool-tile {
-            background-color: white;
-            padding: 10px;
-            box-sizing: content-box;
-            border-radius: 5px;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: -ms-flex;
-            display: flex;
-            -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            text-align: left;
-          }
-
-          .tc-tool-header {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
-          }
-
-          .tc-tool-title {
-            flex: 1;
-            margin: auto;
-          }
-
-          .tc-tool-title>h2.teaser_title {
-            margin-top: unset;
-          }
-
-          .tc-tool-content {
-            margin-bottom: 5px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-          }
-
-          .tc-tool-icon {
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            padding: 11px;
-            margin-right: 20px;
-            background-color: #eee;
-          }
-
-          .tc-powered-by {
-            font-size: 9px;
-            text-align: right;
-            display: block;
-            color: #757575;
-            padding-top: 10px;
-          }
-
-          .tc-powered-by svg {
-            width: 90px;
-            vertical-align: middle;
-          }
-
-          .tc-tool-icon svg {
-            height: 100%;
-          }
-
-          .tc-tool-CTA a {
-            display: block;
-            width: 100%;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 2.2;
-            background-color: #2c8bb1;
-            border-bottom: 4px solid #1c546b;
-            border-radius: 4px;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-          }
-
-          .tc-tool-CTA a:hover {
-            background-color: #1c546b;
-          }
-
-          .tc-main-content-left-container-holder {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 12px;
-          }
-
-          .tc-main-content-left-container-holder input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            outline: none;
-            font-size: 14px;
-            border-radius: 3px;
-            border: 1px solid #eeeeee;
-          }
-
-          .tc-right-element {
-            margin-left: 28px;
-            margin-right: 15%;
-          }
-
-          .tc-left-element {
-            margin-right: 20px;
-          }
-
-          *,
-          ::after,
-          ::before {
-            box-sizing: border-box !important;
-          }
-
-          /* Drag slider specific */
-          .tc-main-content-left-container-holder .tc-drag-slidecontainer {
-            width: 100%;
-            padding: 0px;
-            border: none;
-            margin-top: 15px;
-          }
-
-          .tc-main-content-left-container-holder .tc-drag-slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 10px;
-            padding: 0px;
-            margin: 0px;
-            border-radius: 5px;
-            background: #d7dcdf;
-            outline: none;
-            -webkit-transition: 0.2s;
-            transition: opacity 0.2s;
-          }
-
-          .tc-drag-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: #76aa43;
-            cursor: pointer;
-          }
-
-          .tc-drag-slider::-moz-range-thumb {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: #4caf50;
-            cursor: pointer;
-          }
-
-          /*End of drag slider*/
-
-          /* Toggle switch specific */
-          .tc-tool-switch {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 40px;
-            height: 22px;
-            min-width: 40px;
-            margin-right: 8px;
-          }
-
-          .tc-tool-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-          }
-
-          .tc-tool-switch .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 22px;
-          }
-
-          .tc-tool-switch .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-            border-radius: 100%;
-          }
-
-          .tc-tool-switch input:checked+.slider {
-            background-color: #4caf50;
-          }
-
-          .tc-tool-switch input:checked+.slider:before {
-            -webkit-transform: translateX(18px);
-            -ms-transform: translateX(18px);
-            transform: translateX(18px);
-          }
-
-          /* End of toggle switch*/
-
-          /* Radio input specific */
-          .tc-radio {
-            width: 40%;
-            min-width: 116px;
-            display: flex;
-            align-items: center;
-            text-align: right;
-            position: relative;
-            cursor: pointer;
-            background-color: #eee;
-            border-radius: 5px;
-            height: 30px;
-            margin-bottom: 5px;
-          }
-
-          .tc-radio input {
-            visibility: hidden;
-            cursor: pointer;
-          }
-
-          /* Create a custom radio button */
-          .tc-checkmark {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            bottom: 0;
-            right: 0;
-            height: 22px;
-            width: 22px;
-            background-color: white;
-            border: 1px solid #a5a5a5;
-            border-radius: 50%;
-          }
-
-          /* When the radio button is checked, add a blue background */
-          .tc-radio input:checked~.tc-checkmark {
-            background-color: #4caf50;
-            border: 0;
-          }
-
-          /* Create the indicator (the dot/circle - hidden when not checked) */
-          .tc-checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-          }
-
-          /* Show the indicator (dot/circle) when checked */
-          .tc-radio input:checked~.tc-checkmark:after {
-            display: block;
-          }
-
-          /* End of radio input */
-        </style>
 
         <!-- END TopCompare tool code -->
 

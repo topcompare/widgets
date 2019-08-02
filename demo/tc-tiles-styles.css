@@ -11,6 +11,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   text-align: left;
+  color: #252525 !important;
 }
 
 .tc-tool-header {
@@ -68,8 +69,7 @@
   font-size: 16px;
   font-weight: bold;
   line-height: 2.2;
-  background-color: #2c8bb1;
-  border-bottom: 4px solid #1c546b;
+  background-color: #314556; /* LaLibre Branding Suggestion */
   border-radius: 4px;
   color: white;
   text-decoration: none;
@@ -77,7 +77,7 @@
 }
 
 .tc-tool-CTA a:hover {
-  background-color: #1c546b;
+  background-color:#4a88a7;
 }
 
 .tc-main-content-left-container-holder {
@@ -140,7 +140,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #76aa43;
+  background: #4a88a7; /* LaLibre Branding Suggestion */
   cursor: pointer;
 }
 
@@ -148,7 +148,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #4caf50;
+  background: #4a88a7; /* LaLibre Branding Suggestion */
   cursor: pointer;
 }
 
@@ -198,7 +198,7 @@
 }
 
 .tc-tool-switch input:checked+.slider {
-  background-color: #4caf50;
+  background-color: #4a88a7; /* LaLibre Branding Suggestion */
 }
 
 .tc-tool-switch input:checked+.slider:before {
@@ -246,7 +246,7 @@
 
 /* When the radio button is checked, add a blue background */
 .tc-radio input:checked~.tc-checkmark {
-  background-color: #4caf50;
+  background-color: #4a88a7; /* LaLibre Branding Suggestion */
   border: 0;
 }
 
