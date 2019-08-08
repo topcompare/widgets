@@ -1,38 +1,42 @@
 <html>
+
 <head>
-<meta charset=utf-8>
-<style>
-body {
-  font-family: Helvetica;
-}
+  <meta charset=utf-8>
+  <style>
+    body {
+      font-family: Helvetica;
+    }
 
-#tc_display_widget {
-  max-width: 1180px; /* to not take the full width */
-  margin: 0 auto; /* to center the widget */
-}
-
-</style>
-
+    #tc_display_widget {
+      max-width: 1180px;
+      /* to not take the full width */
+      margin: 0 auto;
+      /* to center the widget */
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="stylesheet-lalibre.css">
 </head>
 
-
 <body>
-<h1>Les prêts voiture</h1>
-<p>Un crédit auto est un prêt affecté, qui vous permet de financer un véhicule motorisé à quatre roues, neuf ou d’occasion. Il s'agit d'un contrat de crédit à la consommation souscrit auprès d’une banque ou d’une institution financière qui vous permet d’obtenir directement l’argent nécessaire pour financer l’achat d’un véhicule. Ainsi, vous remboursez tous les mois une partie du montant emprunté plus les intérêts associés.</p>
+  <h1>Les prêts voiture</h1>
+  <p>Un crédit auto est un prêt affecté, qui vous permet de financer un véhicule motorisé à quatre roues, neuf ou
+    d’occasion. Il s'agit d'un contrat de crédit à la consommation souscrit auprès d’une banque ou d’une institution
+    financière qui vous permet d’obtenir directement l’argent nécessaire pour financer l’achat d’un véhicule. Ainsi,
+    vous remboursez tous les mois une partie du montant emprunté plus les intérêts associés.</p>
 
-<div id="tc_display_widget" data-provider="0b61fda8cd5f29612502437735300823" data-gtm="GTM-K9LSPW3" data-stylesheet="lalibre"></div>
-<script>
-
+  <div id="tc_display_widget" data-provider="0b61fda8cd5f29612502437735300823" data-gtm="GTM-K9LSPW3"
+    data-stylesheet="lalibre"></div>
+  <script>
     (function (window, document) {
-        var loader = function () {
-            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-            script.src = "https://cdn.jsdelivr.net/gh/topcompare/widgets/embedded-loans.js";
-            tag.parentNode.insertBefore(script, tag);
-        };
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+      var loader = function () {
+        var script = document.createElement("script"),
+          tag = document.getElementsByTagName("script")[0];
+        script.src = "https://cdn.jsdelivr.net/gh/topcompare/widgets/embedded-loans.js";
+        tag.parentNode.insertBefore(script, tag);
+      };
+      window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
     })(window, document);
-
-</script>
-
+  </script>
 </body>
+
 </htmL>
