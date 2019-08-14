@@ -4,11 +4,13 @@
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("tc_display_widget").innerHTML = xhttp.responseText;
 		// change the default values on filter UI
-		if (greenOrClassicCar_attr != "classic") {
+		if (params.greenOrClassicCar == "green") {
 			document.querySelectorAll(".tc-green-radio-button")[0].classList.remove("tc-green-radio-button-check");
 			document.querySelectorAll(".tc-green-radio-button")[1].classList.add("tc-green-radio-button-check");
 		}
-		document.getElementById("carAge").value = carAge_attr;
+		if (typeof params.carAge !== "undefined") {
+			document.getElementById("carAge").value = params.carAge;
+		}
     }
   };
 
@@ -38,36 +40,34 @@
   var query = window.location.search.substring(1);
   var qs = parse_query_string(query);
 
-  var domain = "https://topcompare.dash.ba/", prov_attr;
-  if (typeof qs.w !== "undefined") { 
-    prov_attr = qs.w;
-  }else{
-    prov_attr = document.getElementById("tc_display_widget").getAttribute("data-provider");
-  }
-  var amount_attr = 7500;
-  var duration_attr = 24;
-  var carAge_attr = "new";
-  var greenOrClassicCar_attr = "classic";
+  var domain = "https://topcompare.dash.ba/";
+  var prov_attr = document.getElementById("tc_display_widget").getAttribute("data-provider");
+  
+  var params = {};
   if (typeof qs.loanAmount !== "undefined") { 
-    amount_attr = qs.loanAmount;
+    params.price = qs.loanAmount;
   } else if (document.getElementById("tc_display_widget").getAttribute("data-loan-amount") !== null) {
-    amount_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-amount");
+    params.price = document.getElementById("tc_display_widget").getAttribute("data-loan-amount");
   }
   if (typeof qs.loanDuration !== "undefined") { 
-    duration_attr = qs.loanDuration;
+    params.duration = qs.loanDuration;
   } else if (document.getElementById("tc_display_widget").getAttribute("data-loan-duration") !== null){
-    duration_attr = document.getElementById("tc_display_widget").getAttribute("data-loan-duration");
+    params.duration = document.getElementById("tc_display_widget").getAttribute("data-loan-duration");
   }
   if (typeof qs.carAge !== "undefined") { 
-    carAge_attr = qs.carAge;
+    params.carAge = qs.carAge;
   } else if (document.getElementById("tc_display_widget").getAttribute("data-car-age") !== null){
-    carAge_attr = document.getElementById("tc_display_widget").getAttribute("data-car-age");
+    params.carAge = document.getElementById("tc_display_widget").getAttribute("data-car-age");
   }
   if (typeof qs.greenOrClassicCar !== "undefined") { 
-    greenOrClassicCar_attr = qs.greenOrClassicCar;
+    params.greenOrClassicCar = qs.greenOrClassicCar;
   } else if (document.getElementById("tc_display_widget").getAttribute("data-car-type") !== null){
-    greenOrClassicCar_attr = document.getElementById("tc_display_widget").getAttribute("data-car-type");
+    params.greenOrClassicCar = document.getElementById("tc_display_widget").getAttribute("data-car-type");
   }
+
+  var param_string = Object.keys(params).map(function(key) {
+    return key + '=' + params[key]
+  }).join('&');
 
   gtmTCWidget = document.getElementById("tc_display_widget").getAttribute("data-gtm");
   if (!gtmTCWidget)
@@ -92,7 +92,7 @@
   EQCSS.src = domain + "/js/EQCSS.min.js";
   window.onload = (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(EQCSS);
 
-  xhttp.open("GET", domain + "/w/" + prov_attr + "?price=" + amount_attr + "&duration=" + duration_attr + "&carAge=" + carAge_attr+ "&greenOrClassicCar=" + greenOrClassicCar_attr, true);
+  xhttp.open("GET", domain + "/w/" + prov_attr + "?" + param_string, true);
   xhttp.send();
 })();
 
