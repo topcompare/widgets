@@ -666,7 +666,7 @@ input[type="text"]:disabled {
     background-color: #f3f2ee;
 }
 
-@element #tc_display_widget and  (max-width: 1150px) {
+@media (max-width: 1150px) {
     .tc-box-row button {
         font-size: 14px;
         padding: 10px 15px;
@@ -677,7 +677,14 @@ input[type="text"]:disabled {
     }
 }
 
-@element #tc_display_widget and  (max-width: 991px) {
+@media (min-width: 1151px){
+    .tc-main-content-left{
+        display: inline-block !important;
+        float: left;
+    }
+}
+
+@media (max-width: 1150px) {
     .tc-main-content {
         padding: 0px;
         width: 100%;
@@ -1095,7 +1102,6 @@ input[type="text"]:disabled {
 .tc-mobile-hamburger::after {
     font-family: font-custom;
     content: "\f078";
-
 }
 
 .tc-mobile-hamburger.expanded::after {
