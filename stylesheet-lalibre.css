@@ -407,10 +407,10 @@
 }
 
 .tc-box-footer {
-    margin-top: 20px;
     min-height: 30px;
     float: left;
     width: 100%;
+    background-color: #fafafa;
 }
 
 .tc-loader-content div:last-child {
