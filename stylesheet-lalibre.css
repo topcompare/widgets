@@ -681,6 +681,7 @@ input[type="text"]:disabled {
     .tc-main-content-left{
         display: inline-block !important;
         float: left;
+        margin-bottom: 20px;
     }
 }
 
