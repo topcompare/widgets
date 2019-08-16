@@ -20,8 +20,15 @@
 
 .tc-no-products-message {
     font-size: 16px;
-    color: #312f2e;
+    color: #8a6d3b;
     text-align: center;
+    margin-top: 100px;
+    padding: 15px;
+    margin-bottom: 23px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
 }
 
 .tc-main-content-logo-holder img {
