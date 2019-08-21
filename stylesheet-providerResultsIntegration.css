@@ -1,0 +1,328 @@
+body {
+    width: 100% !important;
+}
+
+/* Show and style the filter button */
+.top-banner {
+    display: block !important;
+    background-color: transparent !important;
+}
+
+/* Small screens */
+
+@media (max-width: 991px) {
+
+    .container.whole-container {
+        padding: 0 !important;
+    }
+
+    #result-container {
+        width: 98%;
+        margin: 0 40px !important;
+    }
+
+    .top-banner .container {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: end;
+        flex-wrap: wrap;
+    }
+
+    .top-banner__heading {
+        background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
+        background-repeat: no-repeat;
+        background-size: 150px;
+        background-position-y: 12px;
+        background-position-x: 10px;
+        display: inline-block;
+        order: 2;
+        flex-basis: 50%;
+        flex-grow: 1;
+        height: 50px;
+    }
+
+    .top-banner__category {
+        flex-basis: 100%;
+    }
+
+    .top-banner__category-mobile.visible-xs.visible-sm {
+        position: unset;
+        order: 3;
+        margin-right: 5px;
+    }
+
+    .top-banner-icon.m-cgg-icon--Filter-mobile {
+        display: inline-block !important;
+        padding: 10px 15px !important;
+        border-radius: 3px !important;
+        margin-bottom: 20px !important;
+        margin-top: 12px !important;
+        cursor: pointer;
+        color: #fff !important;
+        background-color: #ac115d !important;
+        border-color: #950f50 !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        line-height: 1.4375 !important;
+    }
+
+    .filter-panel-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .filter-panel-container {
+        display: inline-block !important;
+        transform-origin: top;
+        transition: all 0.7s ease-in-out;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        max-height: 2000px;
+        visibility: visible;
+    }
+
+    .filter-panel-container.hidden-xs.hidden-sm {
+        display: inline-block !important;
+        transform-origin: top;
+        max-height: 0;
+        visibility: hidden;
+    }
+
+    .top-banner>.container {
+        display: flex;
+        background-color: none;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/* end of small screens */
+
+.top-banner-icon.m-cgg-icon--Filter-mobile::before {
+    Content: "Afficher les filtres";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Make the results table use full width */
+.container.whole-container {
+    width: calc(100% - 10px) !important;
+}
+
+/* Make results table always visible, even when filter is open */
+#results-container {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+}
+
+.card-container.row.has-deal.featured {
+    display: none !important;
+}
+
+/* Customize filter */
+
+.filter-panel-container {
+    background-color: #eee !important;
+    border-top: 1px solid #ccc;
+    border-bottom: 3px solid #ccc;
+    background-color: #eee !important;
+    margin: 0 !important;
+}
+
+.filter-panel-group {
+    margin: 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.filter-panel-container hr {
+    border-bottom: 1px solid #ccc !important;
+}
+
+.visible-xs>hr {
+    border: none !important;
+}
+
+.filter-panel-group:first-of-type {
+    display: none;
+}
+
+.filter-panel-wrapper input:checked+.slider {
+    background-color: #4a88a7;
+}
+
+/* end of filter */
+
+/* Customize drop-down selects */
+
+.filter-panel-sorting {
+    width: 100%;
+}
+
+.sort-selection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sort-selection span {
+    font-weight: bold !important;
+    margin-bottom: 10px;
+}
+
+.filter-panel-sorting select {
+    border: 1px solid #cccbc8 !important;
+    border-radius: 3px;
+    padding: 9px !important;
+    width: 100% !important;
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.filter-panel-sorting>.sort-selection>i::before {
+    color: #105b74;
+    position: absolute;
+    right: 12px;
+    top: 16px;
+}
+
+.top-banner {
+    height: auto !important;
+}
+
+.top-banner .container {
+    min-height: 0 !important;
+}
+
+.top-banner__heading span {
+    display: none;
+}
+
+.top-banner__category {
+    width: auto !important;
+    flex: 1;
+    order: 1;
+    flex-basis: 100%;
+}
+
+.top-banner__category label {
+    color: black;
+    font-size: 14px !important;
+}
+
+#category-dropdown {
+    flex: 1;
+}
+
+/* end of select */
+
+@media (min-width: 992px) {
+    .filter-panel-wrapper {
+        display: inline-block;
+        float: left;
+        padding-top: 10px;
+        background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
+        background-repeat: no-repeat;
+        background-size: 150px;
+        background-position-y: bottom;
+        padding-bottom: 45px;
+        background-position-x: 10px;
+    }
+
+    .filter-panel-container {
+        display: inline-block;
+    }
+
+    .filter-panel-group:first-of-type {
+        display: inline-block !important;
+    }
+
+    .filter-panel-container>.filter-panel-sorting {
+        display: inline-block !important;
+    }
+
+    .filter-panel-sorting .sort-selection {
+        text-align: left !important;
+    }
+
+    .filter-panel-sorting {
+        display: block !important;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .top-banner__heading {
+        display: none;
+    }
+
+    #results-container {
+        width: 75%;
+    }
+
+    #results-container>.visible-md:first-of-type {
+        display: none !important;
+    }
+}
+
+/* Remove scrollbar of iframe */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-panel-container>div>div>a>input::-webkit-slider-thumb {
+    background: #4a88a7 !important;
+    background-clip: unset !important;
+    border: 5px solid #4a88a7 !important;
+}
+
+.filter-panel-container>div>div>a>input::-moz-range-thumb {
+    background: #4a88a7 !important;
+    background-clip: unset !important;
+    border: 5px solid #4a88a7 !important;
+}
+
+/* Style the error message when no products are returned*/
+.no-results-text {
+    font-size: 16px;
+    color: #8a6d3b;
+    text-align: center;
+    margin-top: 100px;
+    padding: 15px;
+    margin-bottom: 23px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+/* Gain more space in the filter */
+.list-more-btn {
+    margin: 0;
+}
+
+/* Style for the table of more details in Credit Cards */
+.cc-more-details {
+    width: 100%;
+}
+
+.cc-more-details td:nth-child(1) {
+    width: 40%;
+}
+
+.cc-more-details td:nth-child(2) {
+    width: 10%;
+    text-align: right;
+    padding-right: 2%;
+}
+
+.cc-more-details td:nth-child(3) {
+    width: 50%;
+}
+
+.cc-more-details tr td {
+    border-bottom: dotted 1px rgb(238, 238, 238);
+    border-top: dotted 1px rgb(238, 238, 238);
+    display: inline-enable;
+    vertical-align: middle;
+    min-height: 35px;
+}
