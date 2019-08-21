@@ -31,14 +31,13 @@ body {
     .top-banner__heading {
         background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
         background-repeat: no-repeat;
-        background-size: 150px;
-        background-position-y: 12px;
-        background-position-x: 10px;
+        background-size: 130px;
+        background-position: left center;
         display: inline-block;
         order: 2;
-        flex-basis: 50%;
+        flex-basis: 130px;
         flex-grow: 1;
-        height: 50px;
+        height: 44px;
     }
 
     .top-banner__category {
@@ -48,7 +47,6 @@ body {
     .top-banner__category-mobile.visible-xs.visible-sm {
         position: unset;
         order: 3;
-        margin-right: 5px;
     }
 
     .top-banner-icon.m-cgg-icon--Filter-mobile {
@@ -97,10 +95,10 @@ body {
     }
 }
 
-/* end of small screens */
+/* End of small screens */
 
 .top-banner-icon.m-cgg-icon--Filter-mobile::before {
-    Content: "Afficher les filtres";
+    Content: "Plus de filtres";
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -152,7 +150,7 @@ body {
     background-color: #4a88a7;
 }
 
-/* end of filter */
+/* End of filter */
 
 /* Customize drop-down selects */
 
