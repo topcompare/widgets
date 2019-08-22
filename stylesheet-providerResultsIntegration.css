@@ -35,7 +35,7 @@ body {
         background-position: left center;
         display: inline-block;
         order: 2;
-        flex-basis: 130px;
+        flex-basis: 120px;
         flex-grow: 1;
         height: 50px;
     }
@@ -120,6 +120,15 @@ body {
         margin: 0 !important;
         padding: 0 !important;
     }
+
+    .filter-panel-wrapper .filter-panel-sorting>.sort-selection::after {
+        content: "\e603" !important;
+        font-weight: bold;
+        color: #105b74;
+        position: absolute;
+        right: 25px;
+        top: 35px;
+    }
 }
 
 /* end of small screens */
@@ -127,6 +136,12 @@ body {
 .top-banner-icon.m-cgg-icon--Filter-mobile::before {
     Content: "Plus de filtres";
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.top-banner-icon.m-cgg-icon--Filter-mobile::after {
+    content: "\e959";
+    font-weight: bold;
+    margin-left: 5px;
 }
 
 /* Make the results table use full width */
@@ -201,6 +216,7 @@ body {
 
 .filter-panel-sorting select,
 #category-dropdown {
+    font-size: 14px;
     border: 1px solid #cccbc8 !important;
     border-radius: 3px;
     padding: 9px !important;
@@ -208,7 +224,7 @@ body {
     box-shadow: none !important;
 }
 
-.filter-panel-sorting>.sort-selection>i::before {
+.filter-panel-wrapper .filter-panel-sorting>.sort-selection>i::before {
     content: "\e603" !important;
     font-weight: bold;
     color: #105b74;
@@ -379,4 +395,16 @@ body {
     display: inline-enable;
     vertical-align: middle;
     min-height: 35px;
+}
+
+/* End of Credit Cards more details */
+
+/* Removing first column in Credit Cards */
+[data-col-title="TopDeals"],
+[data-col-title="LaureenScoreVB"],
+[data-col-title="ArthureScoreVB"],
+[data-col-title="ChadScoreVB"],
+[data-col-title="BethanyScoreVB"],
+[data-col-title="HailieScoreVB"] {
+    display: none !important;
 }

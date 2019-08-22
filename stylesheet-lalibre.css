@@ -32,7 +32,7 @@
 }
 
 .tc-main-content-logo-holder img {
-    width: 200px;
+    display: none;
 }
 
 .tc-language-holder {
@@ -201,13 +201,8 @@
 .filter-panel-wrapper .slider {
     background-color: #4a88a7;
 }
-/* end of filter panel */
 
-.tc-main-content-logo-holder {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding-left: 12px;
-}
+/* end of filter panel */
 
 .tc-mobile-hamburger {
     display: none;
@@ -666,22 +661,15 @@ input[type="text"]:disabled {
     background-color: #f3f2ee;
 }
 
-@media (max-width: 1150px) {
-    .tc-box-row button {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
-
-    .tc-box-footer-button {
-        width: 17%;
-    }
-}
-
-@media (min-width: 1151px){
-    .tc-main-content-left{
+@media (min-width: 1151px) {
+    .tc-main-content-left {
         display: inline-block !important;
         float: left;
-        margin-bottom: 20px;
+        padding-bottom: 45px;
+        background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
+        background-repeat: no-repeat;
+        background-size: 150px;
+        background-position-y: bottom;
     }
 }
 
@@ -692,6 +680,12 @@ input[type="text"]:disabled {
         float: left;
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
+        background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
+        background-repeat: no-repeat;
+        background-size: 120px;
+        background-position-y: 13px;
+        background-position-x: 5px;
     }
 
     .tc-main-content-heading {
@@ -727,9 +721,19 @@ input[type="text"]:disabled {
     }
 
     .tc-main-content-left {
+        padding: 0;
         margin: 0 -40px 10px;
         width: auto !important;
         display: none;
+    }
+
+    .tc-box-row button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .tc-box-footer-button {
+        width: 17%;
     }
 
     .tc-box-footer {
@@ -892,8 +896,7 @@ input[type="text"]:disabled {
         display: inline-block;
         padding: 10px 15px;
         border-radius: 3px;
-        margin-bottom: 20px;
-        margin-top: 12px;
+        margin-bottom: 10px;
         cursor: pointer;
         color: #fff;
         /* La Libre Eco Styling */
@@ -902,7 +905,7 @@ input[type="text"]:disabled {
         font-weight: 400;
         font-size: 16px;
         text-align: center;
-        align-self: end;
+        align-self: flex-end;
         line-height: 1.4375;
     }
 
