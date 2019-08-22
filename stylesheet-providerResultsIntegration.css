@@ -22,6 +22,7 @@ body {
     }
 
     .top-banner .container {
+        display: flex;
         flex-direction: row !important;
         justify-content: end;
         flex-wrap: wrap;
