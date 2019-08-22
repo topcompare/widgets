@@ -31,9 +31,8 @@ body {
     .top-banner__heading {
         background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
         background-repeat: no-repeat;
-        background-size: 130px;
-        background-position-y: 13px;
-        background-position-x: 5px;
+        background-size: 120px;
+        background-position: left center;
         display: inline-block;
         order: 2;
         flex-basis: 130px;
