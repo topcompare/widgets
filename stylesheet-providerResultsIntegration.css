@@ -22,7 +22,6 @@ body {
     }
 
     .top-banner .container {
-        display: flex;
         flex-direction: row !important;
         justify-content: end;
         flex-wrap: wrap;
@@ -32,21 +31,36 @@ body {
         background-image: url(https://cdn.jsdelivr.net/gh/topcompare/widgets/icons/be-logo-nosignature.svg);
         background-repeat: no-repeat;
         background-size: 130px;
-        background-position: left center;
+        background-position-y: 13px;
+        background-position-x: 5px;
         display: inline-block;
         order: 2;
         flex-basis: 130px;
         flex-grow: 1;
-        height: 44px;
+        height: 50px;
     }
 
     .top-banner__category {
         flex-basis: 100%;
     }
 
+    .top-banner__category>label {
+        display: block;
+    }
+
+    #category-dropdown {
+        display: block;
+        width: 100%;
+    }
+
+    .top-banner__category::after {
+        top: 30px !important;
+    }
+
     .top-banner__category-mobile.visible-xs.visible-sm {
         position: unset;
         order: 3;
+        margin-right: 5px;
     }
 
     .top-banner-icon.m-cgg-icon--Filter-mobile {
@@ -65,37 +79,45 @@ body {
         line-height: 1.4375 !important;
     }
 
+    /* filter panel and animation */
     .filter-panel-wrapper {
+        z-index: -1;
         margin-bottom: 10px;
+        margin-top: -40px;
     }
 
-    .filter-panel-container {
+    .filter-panel-wrapper>.filter-panel-container {
         display: inline-block !important;
-        transform-origin: top;
-        transition: all 0.7s ease-in-out;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
+        transform-origin: 50px 0 0;
+        transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
+        -webkit-transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
+        -moz-transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
+        -o-transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
         max-height: 2000px;
         visibility: visible;
+        margin-top: 30px !important;
     }
 
-    .filter-panel-container.hidden-xs.hidden-sm {
+    .filter-panel-wrapper>.filter-panel-container.hidden-xs.hidden-sm {
         display: inline-block !important;
-        transform-origin: top;
         max-height: 0;
         visibility: hidden;
+        margin-top: 0 !important;
+        z-index: -1;
+        transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
+        -webkit-transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
+        -moz-transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
+        -o-transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
     }
 
     .top-banner>.container {
-        display: flex;
         background-color: none;
         margin: 0 !important;
         padding: 0 !important;
     }
 }
 
-/* End of small screens */
+/* end of small screens */
 
 .top-banner-icon.m-cgg-icon--Filter-mobile::before {
     Content: "Plus de filtres";
@@ -150,7 +172,7 @@ body {
     background-color: #4a88a7;
 }
 
-/* End of filter */
+/* end of filter */
 
 /* Customize drop-down selects */
 
@@ -169,15 +191,21 @@ body {
 }
 
 .filter-panel-sorting select {
+    width: 100% !important;
+}
+
+.filter-panel-sorting select,
+#category-dropdown {
     border: 1px solid #cccbc8 !important;
     border-radius: 3px;
     padding: 9px !important;
-    width: 100% !important;
     background-color: white !important;
     box-shadow: none !important;
 }
 
 .filter-panel-sorting>.sort-selection>i::before {
+    content: "\e603" !important;
+    font-weight: bold;
     color: #105b74;
     position: absolute;
     right: 12px;
@@ -189,7 +217,9 @@ body {
 }
 
 .top-banner .container {
+    width: 100%;
     min-height: 0 !important;
+    margin: 0;
 }
 
 .top-banner__heading span {
@@ -201,15 +231,30 @@ body {
     flex: 1;
     order: 1;
     flex-basis: 100%;
+    margin: 0 5px;
+}
+
+.top-banner__category::after {
+    content: "\e603" !important;
+    font-weight: bold;
+    color: #105b74 !important;
+    position: absolute;
+    right: 12px;
+    font-size: 10px !important;
 }
 
 .top-banner__category label {
+    padding-right: 12px !important;
     color: black;
     font-size: 14px !important;
+    width: unset !important;
 }
 
 #category-dropdown {
+    display: inline-block;
     flex: 1;
+    height: 35px;
+    float: none;
 }
 
 /* end of select */
@@ -224,7 +269,7 @@ body {
         background-size: 150px;
         background-position-y: bottom;
         padding-bottom: 45px;
-        background-position-x: 10px;
+        background-position-x: 2px;
     }
 
     .filter-panel-container {
@@ -253,6 +298,14 @@ body {
         display: none;
     }
 
+    #category-dropdown {
+        width: unset !important;
+    }
+
+    .top-banner__category::after {
+        top: 11px !important;
+    }
+
     #results-container {
         width: 75%;
     }
@@ -279,7 +332,6 @@ body {
     border: 5px solid #4a88a7 !important;
 }
 
-/* Style the error message when no products are returned*/
 .no-results-text {
     font-size: 16px;
     color: #8a6d3b;
@@ -293,7 +345,6 @@ body {
     border-color: #faebcc;
 }
 
-/* Gain more space in the filter */
 .list-more-btn {
     margin: 0;
 }
