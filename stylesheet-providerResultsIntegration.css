@@ -59,6 +59,8 @@ body {
     }
 
     .top-banner__category-mobile.visible-xs.visible-sm {
+        /* keeps the whole button clickable when .filter-panel-wrapper is hidden */
+        z-index: 1;
         position: unset;
         order: 3;
         margin-right: 5px;
@@ -82,14 +84,16 @@ body {
 
     /* filter panel and animation */
     .filter-panel-wrapper {
-        z-index: -1;
+        z-index: 0;
         margin-bottom: 10px;
+        /* keeps a non-zero height even when the .container inside has height: 0, negative margin-top to not let too much white space on the screen */
         margin-top: -40px;
     }
 
     .filter-panel-wrapper>.filter-panel-container {
         display: inline-block !important;
         transform-origin: 50px 0 0;
+        /* transition when opening the panel */
         transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
         -webkit-transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
         -moz-transition: max-height 500ms ease-in, visibility 500ms ease-in, height 500ms ease-in, margin-top 0ms;
@@ -100,11 +104,12 @@ body {
     }
 
     .filter-panel-wrapper>.filter-panel-container.hidden-xs.hidden-sm {
+        /* display is set to inline-block instead of none to enable css transition */
         display: inline-block !important;
         max-height: 0;
         visibility: hidden;
         margin-top: 0 !important;
-        z-index: -1;
+        /* transition when hiding the panel */
         transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
         -webkit-transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
         -moz-transition: max-height 500ms ease-out, visibility 500ms ease-out, margin-top 0s 500ms;
@@ -232,7 +237,7 @@ body {
     flex: 1;
     order: 1;
     flex-basis: 100%;
-    margin: 0 5px;
+    margin: 0;
 }
 
 .top-banner__category::after {
