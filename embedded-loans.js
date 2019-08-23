@@ -120,12 +120,11 @@
     });
 
     $("#tc_display_widget").on("click", ".tc-mobile-hamburger", function () {
-    	$('.tc-main-content-left').slideToggle(function() {
-		$(".tc-mobile-hamburger").toggleClass("expanded");
-	});
+	$(".tc-mobile-hamburger").toggleClass("expanded");
+    	$(".tc-main-content-left").slideToggle();
     });
     $("#tc_display_widget").on("click", "#tc-close-hamburger", function () {
-      $('.tc-main-content-left').slideToggle();
+      $(".tc-main-content-left").slideToggle();
     });
 
     //GREEN RADIO BUTTON CHANGE COLOR
