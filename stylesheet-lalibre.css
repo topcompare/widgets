@@ -1105,10 +1105,18 @@ input[type="text"]:disabled {
 }
 
 .tc-mobile-hamburger::after {
+    position: absolute;
     font-family: font-custom;
     content: "\f078";
+    right: 10px;
 }
 
+.tc-mobile-hamburger.expanded {
+    opacity: 0.75;
+}
+.tc-mobile-hamburger.expanded::before {
+    content: "Masquer les filtres";
+}
 .tc-mobile-hamburger.expanded::after {
     font-family: font-custom;
     content: "\e775";
