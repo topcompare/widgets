@@ -60,7 +60,8 @@
 .tc-main-content-heading {
     font-size: 24px;
     padding: 10px;
-    border-bottom: 1px solid #f3f2ee;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
 }
 
 .tc-main-content-left-container {
@@ -209,7 +210,7 @@
 }
 
 .tc-main-content-right {
-    width: 80%;
+    width: 75%;
     display: inline-block;
 }
 

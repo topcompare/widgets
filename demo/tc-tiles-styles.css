@@ -74,6 +74,7 @@
   color: white;
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
 }
 
 .tc-tool-CTA a:hover {
@@ -227,7 +228,7 @@
 .tc-radio input {
   visibility: hidden;
   cursor: pointer;
-  width:10px;
+  width:16px;
 }
 
 /* Create a custom radio button */
