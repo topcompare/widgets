@@ -791,10 +791,8 @@ input[type="text"]:disabled {
         display: block;
         height: 50px;
         float: left;
-        margin-top: 10px;
         width: 100%;
         margin-bottom: 10px;
-
     }
 
     .tc-mobile-button {
@@ -1105,7 +1103,7 @@ input[type="text"]:disabled {
 }
 
 .tc-mobile-hamburger::after {
-    position: absolute;
+    /* position: absolute; */
     font-family: font-custom;
     content: "\f078";
     right: 10px;
