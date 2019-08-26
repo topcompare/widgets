@@ -888,7 +888,6 @@ input[type="text"]:disabled {
 
     .tc-marker {
         padding: 2px 10px;
-
     }
 
     .tc-mobile-hamburger {
@@ -906,6 +905,11 @@ input[type="text"]:disabled {
         text-align: center;
         align-self: flex-end;
         line-height: 1.4375;
+        transition: ease all .3s;
+    }
+    .tc-mobile-hamburger:hover {
+        background-color: #870d49;
+        border-color: #870d49;
     }
 
     .tc-mobile-hamburger img {
@@ -931,7 +935,6 @@ input[type="text"]:disabled {
         -webkit-transform: rotate(45deg);
         /* Safari */
         transform: rotate(45deg);
-
     }
 
     #tc-close-hamburger span:after {
