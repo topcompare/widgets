@@ -60,9 +60,9 @@
         var qs = parse_query_string(query);
 
         $(function () {
-            if (typeof qs.page !== "undefined") {
-                var url = "https://www.topcompare.be/fr/branche-21/";
-                $("#tc-iframe").attr("src", url + qs.page + "?providerResultsIntegration=true");
+            if (typeof qs.productSubcategory !== "undefined") {
+                var url = $("#tc-iframe").attr("src");
+                $("#tc-iframe").attr("src", url + "&productSubcategory=" + qs.productSubcategory);
             }
         });
     </script>

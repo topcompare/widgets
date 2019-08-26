@@ -25,7 +25,7 @@
 
         <!-- START TopCompare tool code -->
 
-        <div class="tc-tool-tile">
+        <div class="tc-tool-tile tc-ps">
           <div class="tc-tool-header">
             <div class="tc-tool-icon">
               <svg width="35" height="35" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,17 +135,17 @@
         </div>
 
         <script>
-          $(document).ready(function () {
-            $(".tc-tool-CTA>a").click(function () {
-              var url = "page_ps.html";
+          $(".tc-ps").ready(function () {
+            $(".tc-ps").click(function () {
+              var url=[];
               if ($("input[id='tc-pi']:checked").length > 0) {
-                url += "?productSubcategory=123";
+                url.push("123");
               } if ($("input[id='tc-ps']:checked").length > 0) {
-                url += "?productSubcategory=125";
+                url.push("125");
               } if ($("input[id='tc-lts']:checked").length > 0) {
-                url += "?productSubcategory=124";
+                url.push("124");
               }
-              $(this).attr("href", url);
+              $(".tc-tool-CTA>a", this).attr("href", "page_ps.html?productSubcategory=" + url.toString());
             });
           });
         </script>
