@@ -1,3 +1,9 @@
+*,
+::after,
+::before {
+  box-sizing: border-box !important;
+}
+
 .tc-tool-tile {
   background-color: white;
   padding: 10px;
@@ -56,6 +62,7 @@
 
 .tc-powered-by svg {
   width: 90px;
+  height: 17px;
   vertical-align: middle;
 }
 
@@ -92,7 +99,7 @@
 .tc-main-content-left-container-holder input {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 0;
   outline: none;
   font-size: 14px;
   border-radius: 3px;
@@ -107,12 +114,7 @@
 
 .tc-left-element {
   margin-right: 20px;
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box !important;
+  margin-bottom: 0;
 }
 
 /* Drag slider specific */
@@ -136,6 +138,19 @@
   transition: opacity 0.2s;
 }
 
+.tc-drag-slider::-ms-fill-lower, .tc-drag-slider::-ms-fill-upper {
+  background: #d7dcdf;
+  border-radius: 10px;
+}
+
+.tc-drag-slider::-ms-track {
+  height: 22px !important;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  border-width: 6px 0;
+}
+
 .tc-drag-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 22px;
@@ -150,6 +165,15 @@
   height: 22px;
   border-radius: 50%;
   background: #4a88a7; /* LaLibre Branding Suggestion */
+  cursor: pointer;
+}
+
+.tc-drag-slider::-ms-thumb {
+  border: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #4a88a7;
   cursor: pointer;
 }
 
@@ -231,7 +255,6 @@
   width:16px;
 }
 
-/* Create a custom radio button */
 .tc-checkmark {
   position: absolute;
   top: 4px;
@@ -245,20 +268,17 @@
   border-radius: 50%;
 }
 
-/* When the radio button is checked, add a blue background */
 .tc-radio input:checked~.tc-checkmark {
   background-color: #4a88a7; /* LaLibre Branding Suggestion */
   border: 0;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .tc-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .tc-radio input:checked~.tc-checkmark:after {
   display: block;
 }
