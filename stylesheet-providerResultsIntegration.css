@@ -40,8 +40,9 @@ body {
         height: 50px;
     }
 
-    .top-banner__category {
+    .container>.top-banner__category {
         flex-basis: 100%;
+        margin-bottom: 5px;
     }
 
     .top-banner__category>label {
@@ -130,7 +131,7 @@ body {
         top: 35px;
     }
 
-    .filter-panel-container .visible-xs>hr:first-of-type {
+    .filter-panel-container>hr:first-of-type {
         border-bottom: none !important;
     }
 }
@@ -146,6 +147,11 @@ body {
     content: "\e959";
     font-weight: bold;
     margin-left: 5px;
+}
+
+.top-banner-icon.m-cgg-icon--Filter-mobile:hover {
+    background-color: #870d49 !important;
+    border-color: #870d49 !important;
 }
 
 /* Make the results table use full width */
