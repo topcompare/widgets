@@ -302,8 +302,6 @@
 }
 
 .tc-box-row {
-
-    /*width: {  {  $ width  }  }  %  ;*/
     float: left;
     font-size: 23px;
     font-weight: 700;
@@ -470,15 +468,13 @@
 .tc-box-footer-button {
     float: right;
     margin-left: auto;
-    width: 15%;
-
 }
 
 .tc-button-white {
     height: 30px;
-    width: 100%;
     float: right;
     margin-left: auto;
+    padding: 1px 15px;
     background-color: white;
     border-radius: 3px;
     box-shadow: inset 0 -4px 0 0 #f3f2ee;
