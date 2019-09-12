@@ -50,6 +50,7 @@
   padding: 11px;
   margin-right: 20px;
   background-color: #eee;
+  text-align: center;
 }
 
 .tc-powered-by {
@@ -259,6 +260,7 @@
   height: 30px;
   margin: 5px;
   margin-bottom: 5px;
+  line-height: normal;
 }
 
 .tc-radio input {
